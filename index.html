@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascot Constructor</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="header">
+    <h1>Mascot Generator for</h1>
+    <a href="https://saharalabs.ai/" target="_blank">
+        <img src="logo.svg" alt="Sahara AI Logo">
+    </a>
+</div>
+ <div class="main-container">
+  <div class="constructor-container">
+        <!-- Canvas Area -->
+        <div id="canvas-container">
+            <img id="body" class="layer" src="assets/body/body1.svg" alt="Body">
+            <img id="legs" class="layer" src="assets/legs/legs1.svg" alt="Legs">
+            <img id="left-arm" class="layer movable" src="assets/left_arm/left_arm1.svg" alt="Left Arm" style="z-index: 0;">
+            <img id="right-arm" class="layer movable" src="assets/right_arm/right_arm1.svg" alt="Right Arm" style="z-index: 0;">
+            <img id="head" class="layer" src="assets/head/head1.svg" alt="Head">
+        </div>
+
+        <!-- Control Panel -->
+        <div class="controls">
+            <h2>Settings</h2>
+
+            <div class="control-group">
+                <label>Head</label>
+                <div class="control-buttons">
+                    <button onclick="changePart('head', -1)">&larr;</button>
+                    <button onclick="changePart('head', 1)">&rarr;</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Body</label>
+                <div class="control-buttons">
+                    <button onclick="changePart('body', -1)">&larr;</button>
+                    <button onclick="changePart('body', 1)">&rarr;</button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Right Arm</label>
+                <div class="control-buttons">
+                    <button onclick="changePart('right-arm', -1)">&larr;</button>
+                    <button onclick="changePart('right-arm', 1)">&rarr;</button>
+                    <button onclick="toggleLayer('right-arm')">Layer</button>
+                    <label><input type="checkbox" id="move-right-arm" onchange="toggleDragMode('right-arm')"> Move</label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Left Arm</label>
+                <div class="control-buttons">
+                    <button onclick="changePart('left-arm', -1)">&larr;</button>
+                    <button onclick="changePart('left-arm', 1)">&rarr;</button>
+                    <button onclick="toggleLayer('left-arm')">Layer</button>
+                    <label><input type="checkbox" id="move-left-arm" onchange="toggleDragMode('left-arm')"> Move</label>
+                </div>
+            </div>
+
+
+
+            <div class="control-group">
+                <label>Legs</label>
+                <div class="control-buttons">
+                    <button onclick="changePart('legs', -1)">&larr;</button>
+                    <button onclick="changePart('legs', 1)">&rarr;</button>
+                </div>
+            </div>
+
+            <button class="download-button" onclick="downloadMascot()">Download</button>
+        </div>
+    </div>   </div>   
+    <div class="footer">
+        Created by <b>pumble</b> | <a href="https://x.com/pandpij" target="_blank">Twitter</a>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
